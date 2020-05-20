@@ -29,6 +29,7 @@ function conversaoBinario() {
         {
             alert('O valor digitado deve conter apenas 1s e 0s!')
             input.value = ''  
+            input.focus()
             return 1; 
         }
 
