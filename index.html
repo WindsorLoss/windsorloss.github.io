@@ -499,7 +499,12 @@
 
             if(input[i] == '.' || input[i] == '!' || input[i] == '?')
             {
-                sentencas++
+              sentencas++
+
+             if(input[i - 1] == '.' || input[i - 1] == '!' || input[i - 1] == '?')
+              {
+              sentencas--
+              }
             }
         }
 
@@ -520,8 +525,6 @@
         S = (sentencas * 100) / palavras;
 
         var index = Math.round(0.0588 * L - 0.296 * S - 15.8)
-
-        console.log(index)
 
         if(index >= 13)
         {
