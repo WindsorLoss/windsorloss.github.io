@@ -244,10 +244,15 @@
             <div id="resultadoBinario" class="mb-4"></div>
 
             <h4 class="mb-3">Verificador de cartão de crédito</h4>
-            Número do cartão <input type="number" id="credito" placeholder="Apenas números" oninput="habilitarCredito()" class="mb-2"> <br>
+            Número do cartão: <input type="number" id="credito" placeholder="Apenas números" oninput="habilitarCredito()" class="mb-2"> <br>
             <button id="verificarCredito" onclick="creditoCheck()" class="mb-2" disabled>Verificar</button> 
             <div id="resultadoCredito" class="mb-4"></div>
-
+            
+            <h4 class="mb-3">Analisador de textos</h4>
+            <p>O analisador de textos verifica, segundo o Coleman-Liau index, qual o nível de escolaridade uma pessoa deve ter para compreender totalmente o texto que está sendo analisado.</p>
+            Texto: <input type="text" oninput="habilitarLeitura()" id="leitura" placeholder="Texto para ser analisado" class="mb-2"> <br>
+            <button disabled onclick="verificarLeitura()" id="btnLeitura" class="mb-2">Analisar</button>
+            <div id="resultadoLeitura" class="mb-2"></div>
           </div>
         </div>
     </section>

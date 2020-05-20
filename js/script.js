@@ -18,7 +18,8 @@ function conversaoBinario() {
             if(valor[j] < 0 || valor[j] > 1)
             {
                alert('O valor digitado deve conter apenas 1s e 0s!')
-               input.value = ''  
+               input.value = '' 
+               input.focus() 
                return 1;
             } 
         }
@@ -28,7 +29,8 @@ function conversaoBinario() {
         if(isNaN(resultado) == true)
         {
             alert('O valor digitado deve conter apenas 1s e 0s!')
-            input.value = ''  
+            input.value = '' 
+            input.focus() 
             return 1; 
         }
 
@@ -39,6 +41,14 @@ function conversaoBinario() {
 
     if(decimal_binario.checked == true)
     {
+        if(valor < 0)
+        {
+            alert('O valor digitado deve ser maior que 0!')
+            input.value = '' 
+            input.focus() 
+            return 1;  
+        }
+
         var num = parseInt(valor, 10)
         var resultado = []
         
@@ -153,5 +163,92 @@ function creditoCheck() {
 
 function habilitarCredito() {
     var btn = document.getElementById('verificarCredito');
+    btn.disabled = false;
+}
+
+function verificarLeitura() 
+{
+    var input = String(document.getElementById('leitura').value);
+    var texto = document.getElementById('resultadoLeitura');
+    
+    var letras = 0;
+    var palavras = 0;
+    var sentencas = 0;
+
+    var L = 0;
+    var S = 0;
+    
+    if(input[0] != ' ')
+    {
+        palavras++
+    }
+
+    for(i = 0; i < input.length; i++) //REALIZA A CONTAGEM DE LETRAS, PALAVRAS E SENTENÇAS
+    {
+        if((input[i] >= 'a' && input[i] <= 'z') || (input[i] >= 'A' && input[i] <= 'Z'))
+        {
+            letras++
+        }
+
+        if(input[i] == ' ')
+        {
+            if(input[i + 1] != ' ')
+            {
+                palavras++
+            }
+        }
+
+        if(input[i] == '.' || input[i] == '!' || input[i] == '?')
+        {
+            sentencas++
+        }
+    }
+
+    if(input[input.length - 1] == ' ')
+    {
+        palavras--
+    }
+
+    L = (letras * 100) / palavras;
+    S = (sentencas * 100) / palavras;
+
+    var index = Math.round(0.0588 * L - 0.296 * S - 15.8)
+
+    console.log(index)
+
+    if(index >= 13)
+    {
+        texto.innerHTML = 'Ensino superior'
+    }
+    else if(index == 12)
+    {
+        texto.innerHTML = 'Ensino médio completo'
+    }
+    else if(index == 11)
+    {
+        texto.innerHTML = '3º ano do ensino médio'
+    }
+    else if(index == 10)
+    {
+        texto.innerHTML = '2º ano do ensino médio'
+    }
+    else if(index == 9)
+    {
+        texto.innerHTML = '1º ano do ensino médio'
+    }
+    else if(index <= 8 && index >= 1)
+    {
+        texto.innerHTML = `${index}º Série`
+    }
+    else
+    {
+        texto.innerHTML = `Jardim de infância`
+    }
+
+}
+
+function habilitarLeitura() 
+{
+    var btn = document.getElementById('btnLeitura');
     btn.disabled = false;
 }

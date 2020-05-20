@@ -193,3 +193,8 @@ a:hover, a:focus, a:active {
 img.teste:hover {
   color: rgba(94, 93, 93, 0.541);
 }
+
+input{
+  text-align: center;
+  height: 25px;
+}
