@@ -18,13 +18,8 @@ function conversaoBinario() {
             if(valor[j] < 0 || valor[j] > 1)
             {
                alert('O valor digitado deve conter apenas 1s e 0s!')
-<<<<<<< HEAD
-               input.value = '' 
-               input.focus() 
-=======
                input.value = ''  
                input.focus();
->>>>>>> 7d90c4d5cd32aadc31dd8d200b9d244c1e346969
                return 1;
             } 
         }
@@ -34,13 +29,8 @@ function conversaoBinario() {
         if(isNaN(resultado) == true)
         {
             alert('O valor digitado deve conter apenas 1s e 0s!')
-<<<<<<< HEAD
             input.value = '' 
             input.focus() 
-=======
-            input.value = ''  
-            input.focus()
->>>>>>> 7d90c4d5cd32aadc31dd8d200b9d244c1e346969
             return 1; 
         }
 
