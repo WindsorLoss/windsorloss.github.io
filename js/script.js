@@ -354,3 +354,75 @@ function habilitarConversor()
     var btn = document.getElementById('btnConversor');
     btn.disabled = false;
 }
+
+function cesar() 
+{
+    var texto = String(document.getElementById('texto').value);
+    var key = Number(document.getElementById('key').value)
+    var letra;
+    var resultado = ""
+    var textoResultado = document.getElementById("resultadoCesar")
+
+    var cifrar = document.getElementById('cifrar');
+    var decifrar = document.getElementById('decifrar');
+
+   if(key == '')
+   {
+       alert('Digite uma chave!');
+       return 1;
+   }
+
+    if(cifrar.checked == true)
+    {
+        for(i = 0; i < texto.length; i++)
+        {
+            if(texto[i] >= 'A' && texto[i] <= 'Z')
+            {
+                letra = (((texto.charCodeAt(i) - 65) + key) % 26) + 65
+                letra = String.fromCharCode(letra)
+                resultado += letra
+            }
+            else if(texto[i] >= 'a' && texto[i] <= 'z')
+            {
+                letra = (((texto.charCodeAt(i) - 97) + key) % 26) + 97
+                letra = String.fromCharCode(letra)
+                resultado += letra
+            }
+            else
+            {
+                resultado += texto[i]
+            }
+        }
+        textoResultado.innerHTML = `Seu texto cifrado é "${resultado}"`
+    }
+
+    if(decifrar.checked == true)
+    {
+        for(i = 0; i < texto.length; i++)
+        {
+            if(texto[i] >= 'A' && texto[i] <= 'Z')
+            {
+                letra = (((texto.charCodeAt(i) - 65) - key) % 26) + 65
+                letra = String.fromCharCode(letra)
+                resultado += letra
+            }
+            else if(texto[i] >= 'a' && texto[i] <= 'z')
+            {
+                letra = (((texto.charCodeAt(i) - 97) - key) % 26) + 97
+                letra = String.fromCharCode(letra)
+                resultado += letra
+            }
+            else
+            {
+                resultado += texto[i]
+            }
+        }
+        textoResultado.innerHTML = `Seu texto decifrado é "${resultado}"`
+    }
+}
+
+function habilitarCesar()
+{
+    var btn = document.getElementById('btnCesar');
+    btn.disabled = false;
+}

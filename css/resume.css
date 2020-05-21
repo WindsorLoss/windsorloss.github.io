@@ -198,3 +198,7 @@ input{
   text-align: center;
   height: 25px;
 }
+
+#key{
+  width: 35px;
+}

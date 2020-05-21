@@ -289,6 +289,15 @@
             <button disabled onclick="converterMedidas()" id="btnConversor" class="mb-2">Converter</button>
             <div id="resultadoConversor" class="mb-4"></div>
 
+            <h4 class="mb-3">Cifra de César</h4>
+            <p>Reza a lenda que a cifra de César foi criada pelo próprio líder romano, para que ele enviasse suas cartas para os seus generais sem que nínguem mais conseguisse ler. A cifra funciona por meio de uma chave, a qual indica quantas letras do alfabeto devem ser avançadas/voltadas para cifrar/decifrar o código. <br>
+            Por exemplo: Se César quisesse enviar uma mensagem escrito "Atacar" com a chave 4, a mensagem ficaria "Exegev".</p>
+            Texto: <input type="text" id="texto" class="mb-2"> - Chave: <input type="number" id="key"><br>
+            <input type="radio" name="cesar" id="cifrar" onclick="habilitarCesar()">Cifrar texto <br>
+            <input type="radio" name="cesar" id="decifrar" onclick="habilitarCesar()" class="mb-3">Decifrar texto <br>            
+            <button disabled id="btnCesar" onclick="cesar()" class="mb-2">Transformar</button>
+            <div id="resultadoCesar"></div>
+
           </div>
         </div>
     </section>
