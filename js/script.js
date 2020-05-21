@@ -252,3 +252,105 @@ function habilitarLeitura()
     var btn = document.getElementById('btnLeitura');
     btn.disabled = false;
 }
+
+function converterMedidas()
+{
+    var valor = document.getElementById('valor').value
+    var texto = document.getElementById('resultadoConversor');
+    var teste = document.getElementsByName('entrada');
+    
+    var kmE = document.getElementById('kmE');
+    var hmE = document.getElementById('hmE');
+    var damE = document.getElementById('damE');
+    var mE = document.getElementById('mE');
+    var dmE = document.getElementById('dmE');
+    var cmE = document.getElementById('cmE');
+    var mmE = document.getElementById('mmE');
+
+    if(kmE.checked == false && hmE.checked == false && damE.checked == false && mE.checked == false && dmE.checked == false && cmE.checked == false && mmE.checked == false)
+    {
+        alert('Insira um valor de entrada!');
+        return 1;
+    }
+
+    if(kmE.checked == true)
+    {
+        valor *= 1000;
+    }
+    else if(hmE.checked == true)
+    {
+        valor *= 100;
+    }
+    else if(damE.checked == true)
+    {
+        valor *= 10;
+    }
+    else if(dmE.checked == true)
+    {
+        valor /= 10;
+    }
+    else if(cmE.checked == true)
+    {
+        valor /= 100;
+    }
+    else if(mmE.checked == true)
+    {
+        valor /= 1000;
+    }
+
+    var kmS = document.getElementById('kmS');
+    var hmS = document.getElementById('hmS');
+    var damS = document.getElementById('damS');
+    var mS = document.getElementById('mS');
+    var dmS = document.getElementById('dmS');
+    var cmS = document.getElementById('cmS');
+    var mmS = document.getElementById('mmS');
+
+    if(kmS.checked == false && hmS.checked == false && damS.checked == false && mS.checked == false && dmS.checked == false && cmS.checked == false && mmS.checked == false)
+    {
+        alert('Insira um valor de saída!');
+        return 1;
+    }
+
+    if(kmS.checked == true)
+    {
+        valor /= 1000;
+        texto.innerHTML = ` ${valor} quilômetros`
+    }
+    else if(hmS.checked == true)
+    {
+        valor /= 100;
+        texto.innerHTML = ` ${valor} hectômetros`
+    }
+    else if(damS.checked == true)
+    {
+        valor /= 10;
+        texto.innerHTML = ` ${valor} decâmetros`
+    }
+    else if(mS.checked == true)
+    {
+        texto.innerHTML = ` ${valor} metros`
+    }
+    else if(dmS.checked == true)
+    {
+        valor *= 10;
+        texto.innerHTML = ` ${valor} decímetros`
+    }
+    else if(cmS.checked == true)
+    {
+        valor *= 100;
+        texto.innerHTML = ` ${valor} centímetros`
+    }
+    else if(mmS.checked == true)
+    {
+        valor *= 1000;
+        texto.innerHTML = ` ${valor} milímetros`
+    }
+
+}
+
+function habilitarConversor()
+{
+    var btn = document.getElementById('btnConversor');
+    btn.disabled = false;
+}
