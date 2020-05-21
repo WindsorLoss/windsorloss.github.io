@@ -368,7 +368,12 @@ function cesar()
 
    if(key == '')
    {
-       alert('Digite uma chave!');
+        alert('Digite uma chave!');
+        return 1;
+   }
+   else if(key < 0)
+   {
+       alert('O valor da chave deve ser maior que 0!');
        return 1;
    }
 
