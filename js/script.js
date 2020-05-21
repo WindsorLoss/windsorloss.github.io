@@ -157,7 +157,6 @@ function creditoCheck() {
         texto.innerHTML = ' '
     }
 
-    valor.value = ''
     valor.focus()
 }
 
@@ -359,6 +358,7 @@ function cesar()
 {
     var texto = String(document.getElementById('texto').value);
     var key = Number(document.getElementById('key').value)
+    var keyInput = document.getElementById('key');
     var letra;
     var resultado = ""
     var textoResultado = document.getElementById("resultadoCesar")
@@ -374,6 +374,8 @@ function cesar()
    else if(key < 0)
    {
        alert('O valor da chave deve ser maior que 0!');
+       keyInput.value = '';
+       keyInput.focus();
        return 1;
    }
 
