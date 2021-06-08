@@ -1,4 +1,4 @@
-#The project
+# The project
 
 This project is a website about me :D (very selfish, I know)
 
