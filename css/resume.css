@@ -178,12 +178,18 @@ a:hover, a:focus, a:active {
 }
 
 .espaço {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .sublistas{
   left: 35px;
+  margin-bottom: 8px;
 }
+
+.sobre{
+  font-size: 13pt;
+}
+
 
 .teste{
   padding-top: 0px;
